@@ -1,30 +1,31 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using Confy.Git;
-using Confy.Infrastructure.models;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace Confy
 {
     public static class ConfyExtensions
     {
-        public static IHostBuilder UseLocalConfigServer(this IHostBuilder hostBuilder, Action<GitSettings> setupAction)
+        public static IConfigurationBuilder AddGitSource(this IConfigurationBuilder builder,
+            Action<GitConfigurationSource> setupAction)
         {
-            hostBuilder.ConfigureServices(((context, collection) =>
+            if (builder == null)
             {
-                var gitSettings = new GitSettings();
-                
-                setupAction?.Invoke(gitSettings);
+                throw new ArgumentNullException(nameof(builder));
+            }
 
-                collection.AddSingleton(gitSettings);
+            if (setupAction == null)
+            {
+                throw new ArgumentNullException(nameof(setupAction));
+            }
 
-                collection.AddRepositoryContext();
+            var source = new GitConfigurationSource();
 
-                collection.AddHostedService<ConfyHostedService>();
-            }));
+            setupAction.Invoke(source);
 
-            return hostBuilder;
+            builder.Add(source);
+
+            return builder;
         }
     }
 }

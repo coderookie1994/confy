@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Infrastructure", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Git", "Confy.Git\Confy.Git.csproj", "{1E86EC3E-89B4-41B3-B37D-A6524A305855}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfyConsole", "ConfyConsole\ConfyConsole.csproj", "{90F36B57-BE9A-4616-9654-6F592BF30E3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1E86EC3E-89B4-41B3-B37D-A6524A305855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E86EC3E-89B4-41B3-B37D-A6524A305855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E86EC3E-89B4-41B3-B37D-A6524A305855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Confy.Infrastructure\Confy.Infrastructure.csproj" />
+    <PackageReference Include="NetEscapades.Configuration.Yaml" Version="2.0.1" />
   </ItemGroup>
 
 </Project>
