@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Confy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,15 +13,23 @@ namespace ConfyConsole
         {
             Console.WriteLine("Hello World!");
 
-            var host = Host.CreateDefaultBuilder()
+            var host = Host.CreateDefaultBuilder(args)
+                .ConfigureHostConfiguration(builder =>
+                {
+                    builder.AddUserSecrets<Program>(false);
+                })
                 .ConfigureAppConfiguration((context, builder) =>
                 {
-                    builder.AddGitSource(source =>
-                    {
-                        source.Url = "https://github.com/coderookie1994/rxjs-cache.git";
-                        source.AppName = "test";
-                        source.Branch = "master";
-                    });
+                    if(context.HostingEnvironment.IsDevelopment())
+                        builder.AddGitSource(source =>
+                        {
+                            source.Url = "https://github.com/coderookie1994/rxjs-cache.git";
+                            source.AppName = "test";
+                            source.Branch = "master";
+                            source.AuthTokenEnvironmentVariableName = context.Configuration["Gitlab:Authtoken"];
+                            source.UserNameEnvironmentVariableName = context.Configuration["Gitlab:Username"];
+                            source.AlwaysCloneOnStart = true;
+                        });
                 }).Build();
 
             var conf = host.Services.GetService<IConfiguration>();

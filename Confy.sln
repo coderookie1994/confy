@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confy", "Confy\Confy.csproj", "{72E7EB46-A3A4-45FE-AE7B-FBF8D3615D9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Infrastructure", "Confy.Infrastructure\Confy.Infrastructure.csproj", "{56D0A5F8-DC54-4D36-BDCB-A983DC43EA27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confy.Git", "Confy.Git\Confy.Git.csproj", "{1E86EC3E-89B4-41B3-B37D-A6524A305855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Git", "Confy.Git\Confy.Git.csproj", "{1E86EC3E-89B4-41B3-B37D-A6524A305855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfyConsole", "ConfyConsole\ConfyConsole.csproj", "{90F36B57-BE9A-4616-9654-6F592BF30E3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfyConsole", "ConfyConsole\ConfyConsole.csproj", "{90F36B57-BE9A-4616-9654-6F592BF30E3C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{724330C5-EF59-4162-B59D-3F53A44639A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{72E7EB46-A3A4-45FE-AE7B-FBF8D3615D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E7EB46-A3A4-45FE-AE7B-FBF8D3615D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E7EB46-A3A4-45FE-AE7B-FBF8D3615D9B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56D0A5F8-DC54-4D36-BDCB-A983DC43EA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56D0A5F8-DC54-4D36-BDCB-A983DC43EA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56D0A5F8-DC54-4D36-BDCB-A983DC43EA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56D0A5F8-DC54-4D36-BDCB-A983DC43EA27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E86EC3E-89B4-41B3-B37D-A6524A305855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E86EC3E-89B4-41B3-B37D-A6524A305855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E86EC3E-89B4-41B3-B37D-A6524A305855}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90F36B57-BE9A-4616-9654-6F592BF30E3C} = {724330C5-EF59-4162-B59D-3F53A44639A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97BACEC6-4304-4D2A-B4CF-743FABBEA43F}
