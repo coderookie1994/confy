@@ -11,15 +11,6 @@ namespace Confy.Git
     {
         public string Clone(GitConfigurationSource source)
         {
-            //if (source.AlwaysCloneOnStart)
-            //{
-            //    if (Directory.Exists(
-            //        Path.Combine(Environment.ExpandEnvironmentVariables(@"%userprofile%\AppData\Local\Temp\Confy"))))
-            //    {
-            //        Directory.Delete(Path.Combine(Environment.ExpandEnvironmentVariables(@"%userprofile%\AppData\Local\Temp\Confy")), true);
-            //    }
-            //}
-
             return Repository.Clone(
                 source.Url,
                 Path.Combine(Environment.ExpandEnvironmentVariables(@"%userprofile%\AppData\Local\Temp\Confy_" + Guid.NewGuid())),
