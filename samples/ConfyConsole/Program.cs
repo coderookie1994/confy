@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using Confy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,15 +15,15 @@ namespace ConfyConsole
             var host = Host.CreateDefaultBuilder(args)
                 .ConfigureHostConfiguration(builder =>
                 {
-                    builder.AddUserSecrets<Program>(false);
+                    builder.AddUserSecrets<Program>();
                 })
                 .ConfigureAppConfiguration((context, builder) =>
                 {
                     if(context.HostingEnvironment.IsDevelopment())
                         builder.AddGitSource(source =>
                         {
-                            source.Url = "https://github.com/coderookie1994/rxjs-cache.git";
-                            source.AppName = "test";
+                            source.Url = "https://gitlab.dell.com/Sharthak_Ghosh/dsa-quote-configurations.git";
+                            source.AppName = "dsa-offerworkflow-api-ge4-sit";
                             source.Branch = "master";
                             source.AuthTokenEnvironmentVariableName = context.Configuration["Gitlab:Authtoken"];
                             source.UserNameEnvironmentVariableName = context.Configuration["Gitlab:Username"];
@@ -32,6 +31,7 @@ namespace ConfyConsole
                         });
                 }).Build();
 
+            // This will list GitConfiguration provider as a source for configuration
             var conf = host.Services.GetService<IConfiguration>();
 
             host.Run();

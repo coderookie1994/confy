@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confy", "Confy\Confy.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confy.Git", "Confy.Git\Confy.Git.csproj", "{1E86EC3E-89B4-41B3-B37D-A6524A305855}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfyConsole", "ConfyConsole\ConfyConsole.csproj", "{90F36B57-BE9A-4616-9654-6F592BF30E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSample", "samples\ConfyConsole\ConsoleSample.csproj", "{90F36B57-BE9A-4616-9654-6F592BF30E3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{724330C5-EF59-4162-B59D-3F53A44639A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiSample", "WebApiSample\WebApiSample.csproj", "{BB48B54A-31B8-4585-9612-A5C86E4D2A0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +31,17 @@ Global
 		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90F36B57-BE9A-4616-9654-6F592BF30E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB48B54A-31B8-4585-9612-A5C86E4D2A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB48B54A-31B8-4585-9612-A5C86E4D2A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB48B54A-31B8-4585-9612-A5C86E4D2A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB48B54A-31B8-4585-9612-A5C86E4D2A0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{90F36B57-BE9A-4616-9654-6F592BF30E3C} = {724330C5-EF59-4162-B59D-3F53A44639A3}
+		{BB48B54A-31B8-4585-9612-A5C86E4D2A0F} = {724330C5-EF59-4162-B59D-3F53A44639A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97BACEC6-4304-4D2A-B4CF-743FABBEA43F}
