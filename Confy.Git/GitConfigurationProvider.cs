@@ -24,9 +24,6 @@ namespace Confy.Git
         {
             var repoPath = _platformRepository.Clone(_source);
 
-            if (repoPath.EndsWith(@".git\"))
-                repoPath = repoPath.Replace(@".git\", string.Empty);
-
             var ymlFiles = Directory.GetFiles(repoPath).Where(f => f.EndsWith(".yml") || f.EndsWith(".yaml"));
 
             var filteredYml = ymlFiles.FirstOrDefault(f =>

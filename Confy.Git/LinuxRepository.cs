@@ -9,7 +9,7 @@ namespace Confy.Git
     {
         public string Clone(GitConfigurationSource source)
         {
-            return Repository.Clone(
+            var repoPath = Repository.Clone(
                 source.Url,
                 Path.Combine(Environment.ExpandEnvironmentVariables(@"/tmp/Confy_" + Guid.NewGuid())),
                 new CloneOptions()
@@ -21,6 +21,10 @@ namespace Confy.Git
                         Password = source.AuthTokenEnvironmentVariableName
                     }
                 });
+
+            if (repoPath.EndsWith(@".git/"))
+                repoPath = repoPath.Replace(@".git/", string.Empty);
+            return repoPath;
         }
     }
 }
