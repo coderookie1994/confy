@@ -30,7 +30,11 @@ namespace WebApiSample
                             source.Branch = "master";
                             source.AuthTokenEnvironmentVariableName = context.Configuration["Gitlab:Authtoken"];
                             source.UserNameEnvironmentVariableName = context.Configuration["Gitlab:Username"];
-                            source.AlwaysCloneOnStart = true;
+                            source.CloneOptions = options =>
+                            {
+                                options.CloneSubDir = "sample";
+                                options.AlwaysCloneOnStart = true;
+                            };
                         });
                 })
                 .ConfigureWebHostDefaults(webBuilder =>

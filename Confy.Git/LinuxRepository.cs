@@ -9,13 +9,12 @@ namespace Confy.Git
     {
         public string Clone(GitConfigurationSource source)
         {
-            var options = new Confy.Git.Models.CloneOptions();
+            var cloneOptions = new Models.CloneOptions();
 
-            source.CloneOptions(options);
+            if (source.CloneOptions == null)
+                throw new ArgumentNullException($"Required action ${nameof(cloneOptions)}");
 
-            if(options.AlwaysCloneOnStart) {
-                
-            }
+            source.CloneOptions(cloneOptions);
 
             var repoPath = Repository.Clone(
                 source.Url,

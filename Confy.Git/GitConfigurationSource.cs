@@ -19,14 +19,11 @@ namespace Confy.Git
         public string AuthTokenEnvironmentVariableName { get; set; }
         public Action<CloneOptions> CloneOptions {get;set;}
 
-        public IConfigurationProvider Build(IConfigurationBuilder builder)
-        {
-            if(System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                return new GitConfigurationProvider(this, new WindowsRepository());
-            if(System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                return new GitConfigurationProvider(this, new LinuxRepository());
-                
-            return new GitConfigurationProvider(this, new WindowsRepository());
-        }
+        public IConfigurationProvider Build(IConfigurationBuilder builder) =>
+            System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+                ? new GitConfigurationProvider(this, new WindowsRepository(new GitOperations()))
+                : System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+                    ? new GitConfigurationProvider(this, new LinuxRepository())
+                    : new GitConfigurationProvider(this, new WindowsRepository(new GitOperations()));
     }
 }
