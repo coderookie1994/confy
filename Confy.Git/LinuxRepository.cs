@@ -9,6 +9,14 @@ namespace Confy.Git
     {
         public string Clone(GitConfigurationSource source)
         {
+            var options = new Confy.Git.Models.CloneOptions();
+
+            source.CloneOptions(options);
+
+            if(options.AlwaysCloneOnStart) {
+                
+            }
+
             var repoPath = Repository.Clone(
                 source.Url,
                 Path.Combine(Environment.ExpandEnvironmentVariables(@"/tmp/Confy_" + Guid.NewGuid())),

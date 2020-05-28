@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using Confy.Git.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace Confy.Git
@@ -16,7 +17,7 @@ namespace Confy.Git
 
         public string UserNameEnvironmentVariableName { get; set; }
         public string AuthTokenEnvironmentVariableName { get; set; }
-        public bool AlwaysCloneOnStart { get; set; }
+        public Action<CloneOptions> CloneOptions {get;set;}
 
         public IConfigurationProvider Build(IConfigurationBuilder builder)
         {

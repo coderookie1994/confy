@@ -27,7 +27,10 @@ namespace ConfyConsole
                             source.Branch = "master";
                             source.AuthTokenEnvironmentVariableName = context.Configuration["Gitlab:Authtoken"];
                             source.UserNameEnvironmentVariableName = context.Configuration["Gitlab:Username"];
-                            source.AlwaysCloneOnStart = true;
+                            source.CloneOptions = (cloneOptions) => {
+                                cloneOptions.AlwaysCloneOnStart = true;
+                                cloneOptions.CloneSubDir = "confy";
+                            };
                         });
                 }).Build();
 
