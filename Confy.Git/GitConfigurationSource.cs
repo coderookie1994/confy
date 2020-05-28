@@ -22,6 +22,9 @@ namespace Confy.Git
         {
             if(System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 return new GitConfigurationProvider(this, new WindowsRepository());
+            if(System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                return new GitConfigurationProvider(this, new LinuxRepository());
+                
             return new GitConfigurationProvider(this, new WindowsRepository());
         }
     }
