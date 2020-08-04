@@ -22,11 +22,11 @@ namespace ConfyConsole
                     if(context.HostingEnvironment.IsDevelopment())
                         builder.AddGitSource(source =>
                         {
-                            source.Url = "https://gitlab.dell.com/Sharthak_Ghosh/dsa-quote-configurations.git";
-                            source.AppName = "dsa-offerworkflow-api-ge4-sit";
+                            source.Url = context.Configuration["Github:Url"];
+                            source.AppName = context.Configuration["Github:AppName"];
                             source.Branch = "master";
-                            source.AuthTokenEnvironmentVariableName = context.Configuration["Gitlab:Authtoken"];
-                            source.UserNameEnvironmentVariableName = context.Configuration["Gitlab:Username"];
+                            source.AuthTokenEnvironmentVariableName = context.Configuration["Github:Authtoken"];
+                            source.UserNameEnvironmentVariableName = context.Configuration["Github:Username"];
                             source.CloneOptions = (cloneOptions) => {
                                 cloneOptions.AlwaysCloneOnStart = true;
                                 cloneOptions.CloneSubDir = "confy";
